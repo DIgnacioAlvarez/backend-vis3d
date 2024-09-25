@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 import dotenv from "dotenv"
 import cors from "cors"
 import morgan from "morgan";
+import router from "./src/routes/index"
 
 // const mongoose = require('mongoose');
 // const dotenv = require('dotenv');
 // const cors = require('cors')
 // const morgan = require('morgan')
-import { Product } from './src/schemas/product.js';
+// import { Product } from '../src/schemas/Product';
 
 
 
@@ -22,6 +23,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 app.use(morgan('dev'))
+app.use("api",router)
 
 
 // Conexión a MongoDB
@@ -62,14 +64,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 // };
 
 // crearProducto()
-
-
-
-
-// // Rutas de ejemplo
-app.get('/', (req, res) => {
-  res.send('¡Hola Mundo!');
-});
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
