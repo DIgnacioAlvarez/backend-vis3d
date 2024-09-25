@@ -4,10 +4,10 @@
         "price": 1000,
         "image": "https://media.printables.com/media/prints/409598/images/3409335_3e269a54-12c3-4f2e-800f-caddab8b9170/thumbs/inside/1280x960/jpg/small-thumbnail-2.webp",
         "description": "descripcion del producto",
-        "stock": true,
+        "stock": 1,
         "enable": true,
         "category": "Parafernalia",
-        "dimension": {
+        "dimensions": {
             "height": 10,
             "width": 15,
             "depth": 13
@@ -18,10 +18,10 @@
         "price": 1500,
         "image": "https://media.printables.com/media/prints/525673/images/4250588_100f5cc7-35fd-4fa1-8b87-676ef056cbc6/thumbs/inside/1280x960/jpg/20230712_172748.webp",
         "description": "descripcion del producto",
-        "stock": true,
+        "stock": 2,
         "enable": true,
         "category": "Star Wars",
-        "dimension": {
+        "dimensions": {
             "height": 5,
             "width": 7,
             "depth": 2
@@ -32,10 +32,10 @@
         "price": 2300,
         "image": "https://media.printables.com/media/prints/981111/images/7608405_047403f3-5c4c-4871-af57-c39837776bee_32a01d9a-e9ad-4cd9-b479-5856929de9bf/thumbs/inside/1280x960/jpg/frame.webp",
         "description": "descripcion del producto",
-        "stock": true,
+        "stock": 5,
         "enable": true,
         "category": "Figuras de accion",
-        "dimension": {
+        "dimensions": {
             "height": 10,
             "width": 15,
             "depth": 13

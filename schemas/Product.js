@@ -32,7 +32,7 @@ const productSchema = new Schema({
     required: true,
   },
   dimensions: {
-    heigth: {
+    height: {
       type: Number,
       required: true,
     },
