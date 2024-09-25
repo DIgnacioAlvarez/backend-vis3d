@@ -8,7 +8,7 @@ import morgan from "morgan";
 // const dotenv = require('dotenv');
 // const cors = require('cors')
 // const morgan = require('morgan')
-import { Product } from './schemas/product.js';
+import { Product } from './src/schemas/product.js';
 
 
 
