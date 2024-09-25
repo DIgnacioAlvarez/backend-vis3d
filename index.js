@@ -3,15 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv"
 import cors from "cors"
 import morgan from "morgan";
-import router from "./src/routes/index"
-
-// const mongoose = require('mongoose');
-// const dotenv = require('dotenv');
-// const cors = require('cors')
-// const morgan = require('morgan')
-// import { Product } from '../src/schemas/Product';
-
-
+import router from "./src/routes/index.js"
 
 
 // Cargar variables de entorno
@@ -23,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 app.use(morgan('dev'))
-app.use("api",router)
+app.use(router)
 
 
 // Conexión a MongoDB

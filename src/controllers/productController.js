@@ -1,6 +1,6 @@
-import axios from 'axios'
+
 import mongoose from 'mongoose'
-import { Product } from './src/schemas/Product';
+import { Product } from '../schemas/Product.js';
 
 
 export const getAllProductController = async () =>{

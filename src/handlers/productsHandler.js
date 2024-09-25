@@ -1,4 +1,4 @@
-import {getAllProductController} from '../controllers/productController'
+import {getAllProductController} from '../controllers/productController.js'
 
 export const getAllProducts = async(req,res) => {
     try {

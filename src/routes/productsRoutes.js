@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getAllProducts} from '../handlers/productsHandler'
+import {getAllProducts} from '../handlers/productsHandler.js'
 console.log("antesExport")
 
 export const productRoutes = Router()
