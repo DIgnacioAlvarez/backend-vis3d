@@ -30,33 +30,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   process.exit(1); // Termina la aplicación si no se puede conectar
 });
 
-// const crearProducto = async () => {
-//   const impresion = new Product({
-//     name: "Godzilla",
-//     price: 500,
-//     image: "https://fbi.cults3d.com/uploaders/14240276/illustration-file/9667e503-6b50-4e9f-9126-af23308c8845/d0096ec6c83575373e3a21d129ff8fef_display_large.jpg",
-//     description: "Estatuilla de Gojira",
-//     stock: 2,
-//     enable: true,
-//     category: "Figuras de acción",
-//     dimensions: {
-//       height: 15,
-//       width: 8,
-//       depth: 8
-//     }
-//   },
-  
-// );
-
-//   try {
-//     await impresion.save();
-//     console.log("Producto guardado con éxito");
-//   } catch (error) {
-//     console.error("Error al guardar el producto:", error);
-//   }
-// };
-
-// crearProducto()
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;

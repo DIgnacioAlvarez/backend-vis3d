@@ -42,4 +42,11 @@ export const postProductController = async (body) => {
   return impresion
 };
 
+export const getProductByIdController = async(id) => {
 
+     return await Product.findById(id)
+}
+
+export const getByNameController = async(name) =>{
+    return await Product.find({name:name})
+}
