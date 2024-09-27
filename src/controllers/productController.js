@@ -8,3 +8,38 @@ export const getAllProductController = async () =>{
     console.log("controler")
     return response
 }
+
+
+export const postProductController = async (body) => {
+  const {
+    name,
+    price,
+    image,
+    description,
+    stock,
+    enable,
+    category,
+    dimensions,
+  } = body;
+
+  const impresion = new Product({
+    name: name,
+    price: price,
+    image: image,
+    description: description,
+    stock: stock,
+    enable: enable,
+    category: category,
+    dimensions: {
+      height: dimensions.height,
+      width: dimensions.width,
+      depth: dimensions.depth,
+    },
+  });
+
+  impresion.save()
+
+  return impresion
+};
+
+
