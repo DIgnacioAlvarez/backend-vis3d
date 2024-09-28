@@ -33,10 +33,10 @@ export const getProductByIdHandler = async (req,res) => {
 }
 
 export const changeProductHandler = async (req,res) =>{
-    const {data} = req.body
+    const {id,changes} = req.body
    
     try {
-        const response = await changeProductController(data)
+        const response = await changeProductController(id,changes)
         res.status(200).json(response);
     } catch (error) {
         console.log(error)

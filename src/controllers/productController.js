@@ -52,7 +52,7 @@ export const getByNameController = async(name) =>{
     return await Product.find({name:name})
 }
 
-export const changeProductController = async({id,changes}) =>{
+export const changeProductController = async(id,changes) =>{
 
   return await Product.findByIdAndUpdate(id,
     changes,
