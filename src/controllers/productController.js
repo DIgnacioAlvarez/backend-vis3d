@@ -48,5 +48,13 @@ export const getProductByIdController = async(id) => {
 }
 
 export const getByNameController = async(name) =>{
+    // FALTA BUSQUEDA SENSIBLE, SIN ESPACIOS. 
     return await Product.find({name:name})
+}
+
+export const changeProductController = async({id,changes}) =>{
+
+  return await Product.findByIdAndUpdate(id,
+    changes,
+  {new:true})
 }

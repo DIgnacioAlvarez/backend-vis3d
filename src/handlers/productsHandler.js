@@ -1,4 +1,4 @@
-import {getAllProductController,postProductController,getProductByIdController,getByNameController} from '../controllers/productController.js'
+import {getAllProductController,postProductController,getProductByIdController,getByNameController, changeProductController} from '../controllers/productController.js'
 
 
 export const getAllProducts = async(req,res) => {
@@ -26,6 +26,17 @@ export const getProductByIdHandler = async (req,res) => {
     const {id} = req.params
     try {
         const response = await getProductByIdController(id)
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const changeProductHandler = async (req,res) =>{
+    const {data} = req.body
+   
+    try {
+        const response = await changeProductController(data)
         res.status(200).json(response);
     } catch (error) {
         console.log(error)
