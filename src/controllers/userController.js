@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt"
-import { User } from "../schemas/User"
+import { User } from "../schemas/User.js"
 import mongoose from "mongoose"
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv';
