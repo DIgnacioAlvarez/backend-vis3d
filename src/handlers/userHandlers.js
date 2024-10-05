@@ -4,7 +4,7 @@ import {
   userLoginController,
   changeUserInfoController,
   deleteUserController,
-} from "../controllers/userController";
+} from "../controllers/userController.js";
 
 export const getAllUsersHandler = async (req, res) => {
   try {
@@ -47,7 +47,7 @@ export const changeUserInfoHandler = async (req, res) => {
     console.log(error);
   }
 };
-export const deleteUserInfoHandler = async (req, res) => {
+export const deleteUserHandler = async (req, res) => {
   const { id } = req.params;
 
   try {
