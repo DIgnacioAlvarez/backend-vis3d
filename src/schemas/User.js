@@ -22,6 +22,7 @@ const userSchema = new Schema({
         type:Boolean,
         required: true
     },
+    
     address:{
         country:{
             type:String,
