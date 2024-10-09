@@ -37,19 +37,22 @@ export const userRegisterController = async (userName, email, password) => {
   return user
 };
 
-export const userLoginController = async(email,password) =>{
+export const userLoginController = async(email,passwordBody) =>{
    
     try {
        
         // Buscar al usuario en la base de datos por email
         const user = await User.findOne({ email });
-        const { password, ...userWithoutPassword } = user
-        // Si el usuario no existe o la contraseña no coincide, enviamos un error 401 (no autorizado)
+        
         if(!user){
-            throw new Error({ message: 'Email  incorrecto' })
-        }
-        if(!await bcrypt.compare(password, user.password)){
-            throw new Error({ message: 'Contraseña incorrecta' })
+          throw new Error('Email  incorrecto')
+      }
+        const { password, ...userWithoutPassword } = user
+        
+        // Si el usuario no existe o la contraseña no coincide, enviamos un error 401 (no autorizado)
+        
+        if(!await bcrypt.compare(passwordBody, user.password)){
+            throw new Error('Contraseña incorrecta')
         }
 
         // Si las credenciales son correctas, generamos un token JWT
@@ -64,7 +67,7 @@ export const userLoginController = async(email,password) =>{
 
     } catch (error) {
         // Si ocurre algún error en el proceso, devolvemos un error 500
-        res.status(500).json({ message: 'Error al iniciar sesión' });
+        throw new Error(error.message || 'Error al iniciar sesión');
     }
 
 
