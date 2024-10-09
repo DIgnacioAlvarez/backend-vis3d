@@ -33,9 +33,11 @@ export const userLoginHandler = async (req, res) => {
     const response = await userLoginController(email, password);
     res.status(200).json(response);
   } catch (error) {
-    console.log(error);
+    res.status(401).json({ message: error.message });
   }
 };
+
+
 
 export const changeUserInfoHandler = async (req, res) => {
   const { id } = req.params;
