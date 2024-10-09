@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 export const getAllUsersController = async() =>{
-const response = await User.find({})
+const response = await User.find({}).select('-password')
 return response
 }
 
@@ -22,16 +22,18 @@ export const userRegisterController = async (userName, email, password) => {
     isAdmin: false,
     ban: false,
     address: {
-      country: "",
-      state: "",
-      city: "",
-      postalcode: 0,
-      street: "",
+      country: "N/A",
+      state: "N/A",
+      city: "N/A",
+      postalCode: 0,
+      street: "N/A",
       streetNumber: 0,
       phoneNumber: 0,
-      description: "",
+      description: "N/A",
     },
+   
   });
+  
   return user
 };
 
