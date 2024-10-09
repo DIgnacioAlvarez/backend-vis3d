@@ -77,12 +77,21 @@ export const userLoginController = async(email,passwordBody) =>{
 
 
 
-export const changeUserInfoController = async() =>{
+export const changeUserInfoController = async(id,data) =>{
 
+  const response = await User.findByIdAndUpdate(id,data,{new:true}).select('-password')
+  return response
 }
 
 
 
-export const deleteUserController = async() =>{
+export const deleteUserController = async(id) =>{
+const response = await User.deleteOne({ _id: id })
+const deleted = await User.findById(id) 
 
+if (deleted === null) {
+   return ('Usuario eliminado correctamente');
+} else {
+  throw new Error('Error: el usuario sigue existiendo en la base de datos');
+}
 }
