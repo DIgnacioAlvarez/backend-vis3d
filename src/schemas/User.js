@@ -56,7 +56,13 @@ const userSchema = new Schema({
             type:String,
             required: true
         }
-    }
+    },
+    wishlist: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Product' // Relación con el modelo Product
+        }
+      ]
 })
 
 export const User = model("User", userSchema)
