@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
 
 const orderSchema = new mongoose.Schema({
   user: {
@@ -43,6 +44,6 @@ const orderSchema = new mongoose.Schema({
   timestamps: true // Añade las propiedades createdAt y updatedAt
 });
 
-const Order = mongoose.model('Order', orderSchema);
 
-module.exports = Order;
+
+export const Order = model("Order", orderSchema);

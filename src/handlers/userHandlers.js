@@ -4,6 +4,7 @@ import {
   userLoginController,
   changeUserInfoController,
   deleteUserController,
+  updateWishlistController
 } from "../controllers/userController.js";
 
 export const getAllUsersHandler = async (req, res) => {
@@ -60,3 +61,20 @@ export const deleteUserHandler = async (req, res) => {
   
   }
 };
+
+export const updateWishlistHandler = async (req,res) =>{
+
+  const {userId, productId, action} = req.body
+  console.log(req.body)
+  console.log(userId)
+  console.log("hola mundo")
+  try {
+    const response = await updateWishlistController(userId,productId,action);
+    res.status(200).json(response);
+  } catch (error) {
+
+    console.log(userId)
+    res.status(401).json({ message: error.message });
+  
+  }
+}

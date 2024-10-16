@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 export const getAllUsersController = async() =>{
-const response = await User.find({}).select('-password')
+const response = await User.find({}).select('-password').populate('wishlist')
 return response
 }
 
@@ -95,3 +95,22 @@ if (deleted === null) {
   throw new Error('Error: el usuario sigue existiendo en la base de datos');
 }
 }
+
+
+
+export const updateWishlistController = async (userId, productId, action) => {
+  let update;
+
+  if (!mongoose.Types.ObjectId.isValid(userId) || !mongoose.Types.ObjectId.isValid(productId)) {
+    throw new Error("Invalid userId or productId");
+  }
+
+  if (action === 'add') {
+    update = { $addToSet: { wishlist: productId } }; // Evita duplicados
+  } else if (action === 'remove') {
+    update = { $pull: { wishlist: productId } }; // Elimina el producto
+  }
+
+  const response = await User.findByIdAndUpdate(userId, update, { new: true }).select('-password').populate('wishlist')
+  return response;
+};
