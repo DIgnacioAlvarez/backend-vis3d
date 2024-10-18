@@ -58,3 +58,17 @@ export const changeProductController = async(id,changes) =>{
     changes,
   {new:true})
 }
+
+export const deleteProductController = async(id)=>{
+  const response = await Product.deleteOne({_id:id})
+  const deleted = await Product.findById(id) 
+
+if (deleted === null) {
+   return ('Producto eliminado correctamente');
+} else {
+  throw new Error('Producto no borrado');
+}
+
+
+
+}

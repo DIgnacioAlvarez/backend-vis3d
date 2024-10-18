@@ -24,9 +24,9 @@ export const createOrderHandler = async (req, res) => {
   }
 
   export const getOrderByUserIdHandler = async(req,res)=>{
-    const {userId} = req.params
+    const {id} = req.params
     try {
-        const response = await getOrdersByUserIdController(userId)
+        const response = await getOrdersByUserIdController(id)
         res.status(201).json(response); 
       } catch (error) {
        
