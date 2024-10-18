@@ -28,6 +28,6 @@ export const getAllOrdersController = async() =>{
 } 
 
 export const getOrdersByUserIdController = async(id) =>{
-    const response =  await Order.findById(id)
+    const response =  await Order.find({ user: id })
     return response
 } 
