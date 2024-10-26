@@ -31,3 +31,22 @@ export const getOrdersByUserIdController = async(id) =>{
     const response =  await Order.find({ user: id })
     return response
 } 
+
+export const changeOrderStatusByIdController = async(id, data) =>{
+  const response =  await Order.findByIdAndUpdate(id, data, {new:true})
+  return response
+} 
+
+
+// PUT para modificar la info de las ordenes y un searchOrderById
+
+export const searchOrderByIdController = async(id) =>{
+  const response =  await Order.find(id)
+  return response
+} 
+
+export const deleteOrderByIdController = async(id) =>{
+  const response =  await Order.deleteOne(id)
+  return response
+} 
+
